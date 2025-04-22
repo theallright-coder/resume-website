@@ -3,234 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INNOVATIVE RESUME</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pragati Jain - Innovative Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            text-align: center;
+        .header-gradient {
+            background: linear-gradient(to right, #0f9464, #0e7490);
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        .section-title-gradient {
+            background: linear-gradient(to right, #8b5cf6, #d946ef);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
+        .card-shadow {
+            box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15), 0 3px 7px -2px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
+        .card-shadow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.2), 0 6px 8px -3px rgba(0, 0, 0, 0.1);
         }
-        section {
-            padding: 20px;
-            text-align: center;
+        .nav-link {
+            transition: color 0.3s ease, transform 0.2s ease;
         }
-        .hero {
-            background-color: #e9ecef;
+        .nav-link:hover {
+            color: #a855f7;
+            transform: translateY(-2px);
         }
-        .feature-card {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 10px;
+        .icon-link {
+            transition: color 0.3s ease, transform 0.2s ease;
         }
-        .template-card {
-            background-color: white;
-            padding: 10px;
-            margin-bottom: 10px;
+        .icon-link:hover {
+            color: #a855f7;
+            transform: scale(1.1);
         }
-        .pricing-card {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 10px;
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
         }
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .login-form {
-            background-color: white;
-            padding: 20px;
-            margin: 0 auto;
-            width: 300px;
-        }
-        .login-form input[type="email"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 8px 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-        }
-        .login-form button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            width: 100%;
-        }
-        .template-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .template-grid .template-card {
-            width: 300px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .feature-grid{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+        .slide-in-left {
+            transform: translateX(-50px);
+            animation: slideInLeft 0.8s ease forwards;
         }
-        .feature-grid .feature-card{
-            width: 300px;
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); }
+            to { transform: translateX(0); }
+        }
+        .slide-in-right {
+            transform: translateX(50px);
+            animation: slideInRight 0.8s ease forwards;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(50px); }
+            to { transform: translateX(0); }
         }
 
-        .pricing-grid{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .pricing-grid .pricing-card{
-            width: 300px;
-        }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white py-4">
-        <div class="logo text-xl font-bold">INNOVATIVE RESUME</div>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#templates">Templates</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-                 <li><a href="#login">Login/Sign up</a></li>
-            </ul>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-4 py-10">
+        <nav class="bg-white rounded-lg shadow-md p-4 mb-8 sticky top-0 z-10 card-shadow">
+            <div class="flex flex-col md:flex-row justify-around items-center">
+                <a href="#about" class="nav-link text-gray-700 hover:text-purple-500 font-semibold my-2 md:my-0">About</a>
+                <a href="#education" class="nav-link text-gray-700 hover:text-purple-500 font-semibold my-2 md:my-0">Education</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-purple-500 font-semibold my-2 md:my-0">Skills</a>
+                <a href="#certifications" class="nav-link text-gray-700 hover:text-purple-500 font-semibold my-2 md:my-0">Certifications</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-purple-500 font-semibold my-2 md:my-0">Contact</a>
+            </div>
         </nav>
-    </header>
 
-    <section class="hero py-20 px-4">
-        <h1 class="text-3xl font-bold mb-4">Create Your Perfect Resume</h1>
-        <p class="text-lg mb-8">Stand out from the crowd with our easy-to-use resume builder.</p>
-        <a href="#templates" class="bg-yellow-500 text-blue-700 py-3 px-6 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 font-semibold no-underline">Choose a Template</a>
-    </section>
+        <header class="flex flex-col md:flex-row items-center justify-between mb-8 header-gradient rounded-lg p-6 fade-in">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="images/profile pic" alt="Pragati Jain" class="rounded-full h-24 w-24 mr-5 border-2 border-white">
+                <h1 class="text-3xl font-semibold text-white">Pragati Jain</h1>
+            </div>
+            <p class="text-xl text-gray-200">Student at IIM Bangalore</p>
+        </header>
 
-    <section id="features" class="section py-16 px-4">
-        <h2 class="text-2xl font-bold mb-8">Key Features</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3 class="text-xl font-semibold mb-4 text-green-600">Easy to Use</h3>
-                <p class="text-gray-700 mb-4">Our intuitive interface guides you through the resume creation process.</p>
-                 <img src="https://placehold.co/100x100/EEE/31343C" alt="Easy to Use" class="mx-auto">
-            </div>
-            <div class="feature-card">
-                <h3 class="text-xl font-semibold mb-4 text-green-600">Professional Templates</h3>
-                <p class="text-gray-700 mb-4">Choose from a variety of professionally designed templates.</p>
-                <img src="https://placehold.co/100x100/EEE/31343C" alt="Professional Templates" class="mx-auto">
-            </div>
-            <div class="feature-card">
-                <h3 class="text-xl font-semibold mb-4 text-green-600">Customizable</h3>
-                <p class="text-gray-700 mb-4">Customize your resume to match your personal brand.</p>
-                <img src="https://placehold.co/100x100/EEE/31343C" alt="Customizable" class="mx-auto">
-            </div>
-        </div>
-    </section>
+        <section id="about" class="bg-white rounded-lg shadow-md p-6 mb-8 card-shadow hover-shadow slide-in-left">
+            <h2 class="text-2xl font-semibold section-title-gradient mb-4">About Me</h2>
+            <p class="text-gray-700 text-lg">
+                Hello! I'm Pragati Jain, and I hail from the vibrant city of Indore, Madhya Pradesh. Currently, I'm immersed in my Bachelor's degree studies at the prestigious Indian Institute of Management, Bangalore.
+            </p>
+            <p class="text-gray-700 text-lg mt-4">
+                I'm deeply passionate about transforming bold ideas into game-changing solutions. I'm on a mission to drive innovation and create a lasting impact in the world of business. Let's connect and redefine the future together!
+            </p>
+        </section>
 
-    <section id="templates" class="section py-16 px-4 bg-blue-100">
-        <h2 class="text-2xl font-bold mb-8">Resume Templates</h2>
-        <div class="template-grid">
-            <div class="template-card">
-                <img src="https://placehold.co/300x200/EEE/31343C" alt="Template 1" class="w-full h-auto rounded-md">
-                <h3 class="text-lg font-semibold mt-4 text-blue-600">Template 1</h3>
+        <section id="education" class="bg-white rounded-lg shadow-md p-6 mb-8 card-shadow hover-shadow slide-in-right">
+            <h2 class="text-2xl font-semibold section-title-gradient mb-4">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700">Bachelors of Business Administration </h3>
+                    <p class="text-gray-600">Indian Institute of Management, Bangalore (IIMB)</p>
+                    <p class="text-gray-500">2024 - 2027</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li class="text-gray-700">Relevant Coursework: Digital Business and Entrepreneurship</li>
+                    
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700">Senior Secondary Education</h3>
+                    <p class="text-gray-600">Pragya Girls School</p>
+                    <p class="text-gray-500">2022 - 2024</p>
+                    <ul class="list-disc list-inside mt-2">
+                        <li class="text-gray-700">Major: Commerce with Mathematics </li>
+                        <li class="text-gray-700">Percentage: 90%</li>
+                    </ul>
+                </div>
             </div>
-            <div class="template-card">
-                <img src="https://placehold.co/300x200/EEE/31343C" alt="Template 2" class="w-full h-auto rounded-md">
-                <h3 class="text-lg font-semibold mt-4 text-blue-600">Template 2</h3>
-            </div>
-            <div class="template-card">
-                <img src="https://placehold.co/300x200/EEE/31343C" alt="Template 3" class="w-full h-auto rounded-md">
-                <h3 class="text-lg font-semibold mt-4 text-blue-600">Template 3</h3>
-            </div>
-        </div>
-         <a href="#pricing" class="mt-8 bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 font-semibold no-underline">View Pricing</a>
-    </section>
+        </section>
 
-    <section id="pricing" class="section py-16 px-4">
-        <h2 class="text-2xl font-bold mb-8">Pricing Plans</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3 class="text-xl font-semibold mb-4 text-purple-600">Basic</h3>
-                <p class="text-gray-700 mb-4">Free</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Limited templates</li>
-                    <li>Basic features</li>
-                    <li>Watermarked PDF</li>
-                </ul>
-                <a href="#" onclick="alert('Please Sign Up for the Basic Plan')" class="bg-gray-400 text-white py-3 px-6 rounded-full hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75 font-semibold no-underline">Sign Up</a>
+        <section id="skills" class="bg-white rounded-lg shadow-md p-6 mb-8 card-shadow hover-shadow slide-in-left">
+            <h2 class="text-2xl font-semibold section-title-gradient mb-4">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-purple-600 mb-2">Technical Skills</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="text-gray-700">Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                        <li class="text-gray-700">Google Workspace (Docs, Sheets, Slides)</li>
+                        <li class="text-gray-700">Website development</li>
+                        <li class="text-gray-700">Financial Management</li>
+                         
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-purple-600 mb-2">Soft Skills</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="text-gray-700">Communication (Written and Verbal)</li>
+                        <li class="text-gray-700">Teamwork and Collaboration</li>
+                        <li class="text-gray-700">Leadership and Initiative</li>
+                        <li class="text-gray-700">Problem-Solving and Analytical Skills</li>
+                        <li class="text-gray-700">Time Management and Organization</li>
+                        <li class="text-gray-700">Adaptability and Flexibility</li>
+                    </ul>
+                </div>
             </div>
-            <div class="pricing-card">
-                <h3 class="text-xl font-semibold mb-4 text-purple-600">Premium</h3>
-                <p class="text-gray-700 mb-4">$19/month</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>All templates</li>
-                    <li>Advanced features</li>
-                    <li>Unlimited PDFs</li>
-                </ul>
-                <a href="#" onclick="alert('Please Sign Up for the Premium Plan')" class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 font-semibold no-underline">Get Started</a>
-            </div>
-            <div class="pricing-card">
-                <h3 class="text-xl font-semibold mb-4 text-purple-600">Professional</h3>
-                <p class="text-gray-700 mb-4">$49/month</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Everything in Premium</li>
-                    <li>Priority support</li>
-                    <li>Custom branding</li>
-                </ul>
-                <a href="#" onclick="alert('Please Sign Up for the Professional Plan')" class="bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 font-semibold no-underline">Contact Sales</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section py-16 px-4 bg-blue-100">
-        <h2 class="text-2xl font-bold mb-8">Contact Us</h2>
-        <p class="text-lg text-gray-700 mb-4">Email: support@innovativeresume.com</p>
-        <p class="text-lg text-gray-700">Phone: +123 456 7890</p>
-         <a href="#" onclick="alert('Contact form is not implemented yet.')" class="mt-8 bg-indigo-500 text-white py-3 px-6 rounded-full hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 font-semibold no-underline">Send a Message</a>
-    </section>
-
-    <section id="login" class="section py-16 px-4">
-        <h2 class="text-2xl font-bold mb-8">Login / Sign Up</h2>
-        <div class="login-form">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <div class="flex justify-between items-center mb-4">
-                <label for="remember" class="flex items-center">
-                    <input type="checkbox" id="remember" class="mr-2">
-                    <span class="text-gray-700">Remember Me</span>
-                </label>
-                <a href="#" class="text-blue-500 hover:text-blue-700 no-underline">Forgot Password?</a>
+        <section id="certifications" class="bg-white rounded-lg shadow-md p-6 mb-8 card-shadow hover-shadow slide-in-right">
+            <h2 class="text-2xl font-semibold section-title-gradient mb-4">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-purple-600">ChatGPT In Digital Marketing Certification</h3>
+                    <p class="text-gray-600">UpGrad</p>
+                    <p class="text-gray-500">2024</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-purple-600">Executive Diploma in Finance Management</h3>
+                    <p class="text-gray-600">MTF Institute of Management, Technology and Finance Udemy </p>
+                    <p class="text-gray-500">2024</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-purple-600">TCS iON Career Edge - Young Professional</h3>
+                    <p class="text-gray-600">TCS iON </p>
+                    <p class="text-gray-500">2024</p>
+                </div>
             </div>
-            <a href="#" onclick="alert('Login/Signup functionality is not implemented yet.')" class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 focus:outline-none  font-semibold no-underline">Login / Sign Up</a>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-gray-800 text-white py-6">
-        <p>© 2024 INNOVATIVE RESUME. All rights reserved.</p>
-    </footer>
+        <section id="contact" class="bg-white rounded-lg shadow-md p-6 card-shadow hover-shadow fade-in">
+            <h2 class="text-2xl font-semibold section-title-gradient mb-4">Contact</h2>
+            <p class="text-lg text-gray-700 flex items-center mb-2">
+                <i class="fas fa-envelope mr-2 text-purple-500"></i>
+                <span>Email: pragatijainpragya2706@gmail.com</span>
+            </p>
+            <p class="text-lg text-gray-700 flex items-center mb-2">
+                <i class="fas fa-phone-alt mr-2 text-purple-500"></i>
+                <span>Phone: +91 6266502220 </span>
+            </p>
+            <p class="text-lg text-gray-700 flex items-center">
+                <i class="fab fa-linkedin mr-2 text-purple-500"></i>
+                <a href="https://www.linkedin.com/in/pragati-jain-21130632a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline icon-link">linkedin.com/in/pragati-jain</a>
+            </p>
+        </section>
+    </div>
 </body>
 </html>
