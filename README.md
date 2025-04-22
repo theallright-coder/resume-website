@@ -1,3 +1,3 @@
- ResumeMaker – Personal Resume Website
+ Pragati Jain – Personal Resume Website
 
-Welcome to **ResumeMaker** – a clean, modern, and responsive personal resume website built using only **HTML and CSS**. 
+Welcome to My Resume 
